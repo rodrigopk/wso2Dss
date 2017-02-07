@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="saveEmployeeCSV" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="custom">
+    <property name="sequence" value="fileWriteSequence"/>
+  </log>
+  <property name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
+  <xslt key="gov:xml2csv.xslt"/>
+  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+  <call>
+    <endpoint name="FileEpr">
+      <address trace="disable" uri="vfs:file:///C:/Users/rodrigo.vasconcelos/Documents/POC/out/csv_out.csv"/>
+    </endpoint>
+  </call>
+</sequence>

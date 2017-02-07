@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CountryProxy" groupId="com.wso2.poc.training.PocConfigProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/CountryProxy.xml</file>
+    </artifact>
+    <artifact name="DbCountryByCode" groupId="com.wso2.poc.training.PocConfigProject.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/DbCountryByCode.xml</file>
+    </artifact>
+    <artifact name="DbInsertCountry" groupId="com.wso2.poc.training.PocConfigProject.template" version="1.0.0" type="synapse/sequenceTemplate" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/templates/DbInsertCountry.xml</file>
+    </artifact>
+    <artifact name="EmployeeProxy" groupId="com.wso2.poc.training.PocConfigProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/EmployeeProxy.xml</file>
+    </artifact>
+</artifacts>

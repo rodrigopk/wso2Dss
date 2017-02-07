@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="EmployeeProxy" startOnLoad="true" trace="disable"
+  transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <property expression="//*[local-name()='department']"
+        name="department" scope="default" type="STRING"/>
+      <payloadFactory media-type="xml">
+        <format>
+          <dat:getDepartmentEmployees xmlns:dat="http://ws.wso2.org/dataservice">
+            <dat:department_id>$1</dat:department_id>
+          </dat:getDepartmentEmployees>
+        </format>
+        <args>
+          <arg evaluator="xml" expression="get-property('department')"/>
+        </args>
+      </payloadFactory>
+    </inSequence>
+    <outSequence>
+      <log level="custom">
+        <property name="status" value="outsequence"/>
+      </log>
+      <clone continueParent="true">
+        <target sequence="gov:saveEmployeeCSV.xml"/>
+      </clone>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>
