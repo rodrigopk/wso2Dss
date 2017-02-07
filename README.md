@@ -24,10 +24,10 @@ Employee
 ```
 And returns a list of employees for department_id.It also saves the result of the query in a csv file.
 
-### H3 Initial configuration
+### Initial configuration
 You need to configure the ESB to use the VFS transport for processing the files.
 Edit the **<ESB_HOME>/repository/conf/axis2/axis2.xml** file and uncomment the VFS sender as follows:
 ```xml
 <transportSender name="vfs" class="org.apache.synapse.transport.vfs.VFSTransportSender"/>
 ```
-And change the path for the output file in **<PROJECT_HOME>/src\main\synapse-config\proxy-services/EmployeeProxy.xml**.
+And change the path for the output file in **<PROJECT_HOME>/src/main/synapse-config/proxy-services/EmployeeProxy.xml**.
